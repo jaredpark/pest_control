@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+
+<html>
+  <head>
+    <title>Spray Pros Pest Control</title>
+    <!-- Include meta tag to ensure proper rendering and touch zooming -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Include bootstrap stylesheets -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static "css/base.css" %}">
+  </head>
+
+  <body>
+    <nav>
+      <div id='nav_logo'>Spray Pros Pest Control</div>
+      <ul id ='nav_links'>
+        <li><a href='/about'>About</a></li>
+        <li><a href='/contact'>Contact</a></li>
+      </ul>
+    </nav>
+    <hr />
+    <div id='content'>
+      {% block body_block %}
+      {% endblock body_block %}
+    </div>
+  </body>
+</html>
