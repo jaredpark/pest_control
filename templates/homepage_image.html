@@ -1,0 +1,15 @@
+{% load static %}
+
+<div class='container-fluid homepage_image'>
+	<div class='image_container'>
+		<img src="{% static main_image_file %}">
+	</div>
+	<div class='homepage_image_text'>
+		<h3>
+			{{ main_image_header_text }}<br /><em>{{ main_image_content_text }}</em><br />
+			<a href='{{ main_image_button_link }}' style='padding-top:10px;'>
+				<button type="button" class="btn btn-danger">{{ main_image_button_text }}</button>
+			</a>
+		</h3>
+	</div>
+</div>

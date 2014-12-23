@@ -7,8 +7,10 @@ https://docs.djangoproject.com/en/1.7/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.7/ref/settings/
 """
-
 project_name = 'pest_control'
+
+import django.conf.global_settings as DEFAULT_SETTINGS
+TEMPLATE_CONTEXT_PROCESSORS = DEFAULT_SETTINGS.TEMPLATE_CONTEXT_PROCESSORS + ("context_processors.site_settings_processor", )
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
@@ -45,7 +47,10 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'homepage',
+    'crispy_forms',
 )
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -92,3 +97,14 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     STATIC_PATH,
     )
+
+
+# EMAIL SETTTINGS
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = '587'
+EMAIL_HOST_USER = 'jaredjamespark@gmail.com'
+EMAIL_HOST_PASSWORD = 'tnnikcwjsdarwtjk'
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'jaredjamespark@gmail.com'
+SERVER_EMAIL = 'jaredjamespark@gmail.com'   

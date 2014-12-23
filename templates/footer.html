@@ -1,0 +1,54 @@
+{% load static %}
+
+<footer id='footer' class="navbar navbar-default navbar-bottom custom-footer" role="navigation">
+  <div class="container-fluid">
+    <div class='row'>
+      <div class='col-md-4 copyright'>
+        <a class='custom-logo' href="../"><img src="{% static logo_file_name %}"></a>
+        <p> &copy;{{ footer_copyright }} </p>
+      </div>
+      <div class='col-md-4 connect'>
+        <h4>Connect With Us</h4>
+        <ul class='horizontal_ul'>
+          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+        </ul>
+        {% if form_errors %}
+        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#contact_modal">
+          Form Error/s, please try again!
+        </button>
+        {% elif first_name %}
+        <a href="../about">
+          <button type="button" class="btn btn-warning">
+            Thank you for getting in touch {{ first_name }}.
+          </button>
+        </a>
+        {% else %}
+        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#contact_modal">
+          {{ call_to_action_button_text }}
+        </button>
+        {% endif %}
+      </div>
+      <div class='col-md-4 sitemap'>
+        <ul>
+          <li><h4>Sitemap</h4></li>
+          <li><a href="{{ navbar_link1_url }}">{{ navbar_link1_text }}</a></li>
+          <li><a href="{{ navbar_link2_url }}">{{ navbar_link2_text }}</a></li>
+          <li><a href="{{ navbar_link3_url }}">{{ navbar_link3_text }}</a></li>
+        </ul>
+      </div>
+  </div>
+</footer>
+<script>
+//   $(document).ready(function() {
+
+//    var docHeight = $(window).height();
+//    var footerHeight = $('#footer').height();
+//    var footerTop = $('#footer').position().top + footerHeight;
+
+//    if (footerTop < docHeight) {
+//     $('#footer').css('margin-top', 10 + (docHeight - footerTop) + 'px');
+//    }
+//   });
+</script>

@@ -1,0 +1,28 @@
+{% load static %}
+
+<header class="navbar navbar-default navbar-static-top custom-navbar" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class='custom-logo' href="../"><img src="{% static logo_file_name %}"></a>
+    </div>
+    <nav class="navbar-collapse collapse custom-navbar" role="navigation">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{{ navbar_link1_url }}"> {{ navbar_link1_text }} </a></li>
+        <li><a href="{{ navbar_link2_url }}"> {{ navbar_link2_text }} </a>
+          <ul class='navbar-default dropdown-menu' role='menu'>
+            <li><a href="#">sublink1</a></li>
+            <li><a href="#">sublink2</a></li>
+            <li><a href="#">sublink3</a></li>
+          </ul>
+        </li>
+        <li><a href="{{ navbar_link3_url }}"> {{ navbar_link3_text }} </a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

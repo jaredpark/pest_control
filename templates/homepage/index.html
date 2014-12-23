@@ -2,8 +2,11 @@
 
 {% extends 'base.html' %}
 
-{% load staticfiles %}
+{% load crispy_forms_tags %}
+{% load static %}
 
 {% block body_block %}
-  <p>Welcome {{ first_name }}!<p>
+	{% include 'call_to_action.html' %}
+	{% include 'homepage_image.html' %}
+	{% include 'homepage_content.html' %}
 {% endblock body_block %}

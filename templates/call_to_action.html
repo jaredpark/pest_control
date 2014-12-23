@@ -1,0 +1,21 @@
+<div class='container-fluid call-to-action-banner'>
+  <div>
+    {% if form_errors %}
+    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#contact_modal">
+      Form Error/s, please try again!
+    </button>
+    {% elif first_name %}
+    <a href="../about">
+      <button type="button" class="btn btn-warning">
+        Thank you for getting in touch {{ first_name }}.
+      </button>
+    </a>
+    We'll be in touch within one business day.
+    {% else %}
+    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#contact_modal">{{ call_to_action_button_text }}</button>
+    {{ call_to_action_text }}
+    {% endif %}
+  </div>
+</div>
+
+{% include 'contact_form.html' with form=form %}

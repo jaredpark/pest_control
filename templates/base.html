@@ -1,29 +1,54 @@
 <!DOCTYPE html>
 
-{% load staticfiles %}
+{% load static %}
 
 <html>
-  <head>
-    <title>Spray Pros Pest Control</title>
-    <!-- Include meta tag to ensure proper rendering and touch zooming -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Include bootstrap stylesheets -->
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{% static "css/base.css" %}">
-  </head>
+<head>
+  <title>Spray Pros Pest Control</title>
+  <meta name="description" content="{{ meta_content }}">
+  <meta name="keywords" content="{{ meta_keywords }}">
+  <!-- Include meta tag to ensure proper rendering and touch zooming -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="{% static "bootstrap/css/bootstrap.min.css" %}">
+  <link href="//fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700" rel="stylesheet"/>
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="{% static "bootstrap/css/bootstrap-theme.min.css" %}">
+  <link rel="stylesheet" href="{% static "font-awesome-4.2.0/css/font-awesome.css" %}">
+  <link rel="stylesheet" href="{% static "css/base.css" %}">
+  <link rel="stylesheet" href="{% static "css/social-buttons.css" %}">
+  <script src="http://malsup.github.com/jquery.form.js"></script> 
+  <script> 
+  // wait for the DOM to be loaded 
+    $(document).ready(function() { 
+      $('#contact_form').ajaxForm(function() { 
+        alert("Thank you for contacting us!"); 
+      }); 
+    }); 
+  </script> 
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+</head>
 
-  <body>
-    <nav>
-      <div id='nav_logo'>Spray Pros Pest Control</div>
-      <ul id ='nav_links'>
-        <li><a href='/about'>About</a></li>
-        <li><a href='/contact'>Contact</a></li>
-      </ul>
-    </nav>
-    <hr />
-    <div id='content'>
-      {% block body_block %}
-      {% endblock body_block %}
-    </div>
-  </body>
+<body>
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+  </script>
+  {% include 'nav_bar.html' %}
+  <div id='base_body_wrapper'>
+    {% block body_block %}
+    {% endblock body_block %}
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+  <script src="{% static "bootstrap/js/bootstrap.min.js" %}"></script>
+</body>
+{% include 'footer.html' %}
 </html>
