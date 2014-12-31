@@ -16,3 +16,8 @@ def products(request):
 	ContactFormProcessor(request, context_dictionary)
 	return(render(request, 'misc_pages/products.html', context_dictionary))
 
+def specials(request):
+	context_dictionary = {}
+	ContactFormProcessor(request, context_dictionary)
+	return(render(request, 'misc_pages/specials.html', context_dictionary))
+
