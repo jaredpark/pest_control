@@ -29,6 +29,9 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
+AUTH_PROFILE_MODULE = 'homepage.UserProfile'
+LOGIN_URL = '/./login/'
+
 ALLOWED_HOSTS = []
 
 TEMPLATE_DIRS = [
@@ -47,6 +50,14 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'homepage',
+    'navbar',
+    'footer',
+    'sidebar',
+    'user_interface',
+    'contact',
+    'contact_form',
+    'call_to_action',
+    'carousel',
     'crispy_forms',
 )
 

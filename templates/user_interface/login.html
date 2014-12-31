@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+{% extends 'extend_templates/info_page.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block page_content_block %}
+	{% if logged_in %}
+	<h4>Welcome {{ user.username }}! You are currently logged in.</h4>
+	<a class='btn btn-primary' href='{% url 'account' %}'>View Your Account</a>
+	{% else %}
+		{% if login_errors %}
+		<h5 style='color:red;'>Invalid username/password combination. Please try again.</h5>
+		{% else %}
+		<row style="height:30px;">
+			Current users please sign in below. First time here?
+			<div style='position:absolute;float:left;display:inline;'>
+				<a class="btn btn-danger" href='{% url 'register' %}' role='button'>Sign Up now!</a>
+			</div>
+		</row>
+		{% endif %}
+	<form class='login_form' method="post" action="{% url 'login' %}">
+		{% csrf_token %}
+		{{ login_form|crispy }}
+		<button type="submit" class="btn btn-primary">Log In</button>
+		<!-- <div style='position:absolute;float:left;display:inline;'>&nbsp;&nbsp;or&nbsp;&nbsp;<a class="btn btn-default" href='../register' role='button'>Sign Up</a></div> -->
+	</form>
+	{% endif %}
+</div>
+{% endblock page_content_block %}

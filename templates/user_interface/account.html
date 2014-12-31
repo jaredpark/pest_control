@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+{% extends 'extend_templates/info_page.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block page_content_block %}
+<row style='text-align:center;'>
+	<p><a class='btn btn-sm btn-primary' href="../logout/" style='color:#fff'>Click here</a> to log out.</p>
+</row>
+<ul id='account-tabs' class="nav nav-tabs" role='tablist'>
+  <li role="presentation"><a href="#tab1" id='tab1-tab' role='tab' data-toggle='tab' aria-controls='tab1' aria-expanded='false'>My Account</a></li>
+  <li role="presentation"><a href="#tab2" id='tab2-tab' role='tab' data-toggle='tab' aria-controls='tab2' aria-expanded='false'>My Details</a></li>
+  <li role="presentation"><a href="#tab3" id='tab3-tab' role='tab' data-toggle='tab' aria-controls='tab3' aria-expanded='false'>Another Tab</a></li>
+</ul>
+<div id='account-tab-content' class='tab-content'>
+	<div role='tabpanel' class='tab-pane fade' id='tab1' aria-labelledby='tab1-tab'>
+		stuff goes here stuff goes here stuff goes here stuff goes here stuff goes here stuff goes here stuff goes here stuff goes here stuff goes here stuff goes here  stuff goes here stuff goes here stuff goes here stuff goes here
+	</div>
+	<div role='tabpanel' class='tab-pane fade' id='tab2' aria-labelledby='tab2-tab'>
+<!-- 		<form class='profile_form' id="details_form" method="post" action=".">
+			{% csrf_token %}
+			{{ profile_form|crispy }}
+			<button type="submit" class="btn btn-primary">Update Profile</button>
+		</form> -->
+		{{ request.user.profile.email }}
+	</div>
+	<div role='tabpanel' class='tab-pane fade' id='tab3' aria-labelledby='tab3-tab'>
+		and ever more here and ever more here and ever more here and ever more here and ever more here and ever more here and ever more here and ever more here and ever more here and ever more here and ever more here and ever more here and ever more here and ever more here and ever more here and ever more here 
+	</div>
+</div>
+{{ user.get_profile.zipcode }}
+{% endblock page_content_block %}

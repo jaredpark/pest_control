@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-{% extends 'base.html' %}
+{% extends 'extend_templates/base.html' %}
 
 {% load crispy_forms_tags %}
 {% load static %}
 
 {% block body_block %}
-	{% include 'call_to_action.html' %}
-	{% include 'homepage_image.html' %}
-	{% include 'homepage_content.html' %}
+	{% include 'call_to_action/call_to_action.html' %}
+	{% include 'homepage/homepage_image.html' %}
+	{% include 'homepage/homepage_content.html' %}
 {% endblock body_block %}
