@@ -113,9 +113,10 @@ ul li:hover ul{
 	font-size: .7em;
 }
 
-.call-to-action-banner button {
+.call-to-action-banner .btn {
 	font-family:'Libre Baskerville', Georgia, serif;
-	font-size: .7em;
+	font-size: 1.1em;
+	padding:6px 6px 8px;
 }
 
 @media (min-width: 992px) { 
@@ -124,7 +125,7 @@ ul li:hover ul{
 		font-size: 1.2vw;
 	}
 
-	.call-to-action-banner button {
+	.call-to-action-banner .btn {
 		font-size: 1.2vw;
 	}
 }
@@ -137,8 +138,8 @@ ul li:hover ul{
 }
 
 .call-to-action-banner div {
-	padding-top: 1.5vh;
-	padding-bottom: 1.5vh;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 .carousel_container, .image_container{

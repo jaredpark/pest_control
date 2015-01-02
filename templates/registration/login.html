@@ -15,13 +15,13 @@
 		<div style='padding-bottom:20px;'>
 			<div style='display:inline;'>Current users please sign in below. First time here?&nbsp&nbsp&nbsp</div>
 			<div style='position:absolute;float:left;display:inline;margin-top:-4px;'>
-				<a href='{% url 'register' %}' role='button'><button class="btn btn-sm btn-danger" role='button'>Sign Up now!</button></a>
+				<a href='{% url 'registration_register' %}' role='button'><button class="btn btn-sm btn-danger" role='button'>Sign Up now!</button></a>
 			</div>
 		</div>
 		{% endif %}
-	<form class='login_form' method="post" action="{% url 'login' %}">
+	<form class='login_form' method="post" action=".">
 		{% csrf_token %}
-		{{ login_form|crispy }}
+		{{ form|crispy }}
 		<button type="submit" class="btn btn-primary">Log In</button>
 	</form>
 	{% endif %}

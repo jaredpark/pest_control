@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+
+{% extends 'extend_templates/info_page.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block page_content_block %}
+<h3>Registration Email Sent</h3>
+        <p>Please check your {{ user.email }} email address to confirm your account.</p>
+{% endblock page_content_block %}

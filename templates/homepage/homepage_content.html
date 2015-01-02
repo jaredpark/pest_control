@@ -9,7 +9,7 @@
 	</div>
 	<div class='container-fluid homepage_column_wrapper'>
 		<div class='col-md-4'>
-			<a href='{{ img1_link }}'>
+			<a href='{{ img1_link_name }}'>
 				<h5>{{ img1_title }}</h5>
 				<img class='circular' src='{% static img1_file %}' alt='{{ img1_alt }}'></img>
 				<p>{{ img1_text }}</p>
@@ -17,13 +17,13 @@
 		</div>
 		<div class='col-md-4'>
 				<h5>{{ img2_title }}</h5>
-				<a href='{{ img1_link }}'>
+				<a href='{{ img2_link_name }}'>
 				<img class='circular' src='{% static img2_file %}' alt='{{ img2_alt }}'></img>
 				<p>{{ img2_text }}</p>
 			</a>
 		</div>
 		<div class='col-md-4'>
-			<a href='{{ img1_link }}'>
+			<a href='{{ img3_link_name }}'>
 				<h5>{{ img3_title }}</h5>
 				<img class='circular' src='{% static img3_file %}' alt='{{ img3_alt }}'></img>
 				<p>{{ img3_text }}</p>

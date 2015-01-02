@@ -45,10 +45,12 @@ TEMPLATE_DIRS = [
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
+    # 'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'registration',
     'homepage',
     'navbar',
     'footer',
@@ -60,6 +62,12 @@ INSTALLED_APPS = (
     'carousel',
     'crispy_forms',
 )
+
+REGISTRATION_OPEN = True
+ACCOUNT_ACTIVATION_DAYS = 7
+REGISTRATION_AUTO_LOGIN = True
+LOGIN_REDIRECT_URL = '/my_account/'
+LOGIN_URL = '/accounts/login/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 

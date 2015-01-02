@@ -53,9 +53,9 @@ def myLogin(request):
 		return(render(request, 'user_interface/login.html', {'login_form': login_form,}))
 
 @login_required
-def user_logout(request):
+def myLogout(request):
     logout(request)
-    return(HttpResponseRedirect('../'))
+    return(HttpResponseRedirect('/'))
 
 @login_required
 def account(request):
