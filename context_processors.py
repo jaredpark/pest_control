@@ -1,5 +1,8 @@
 def site_settings_processor(request):
 	context_dictionary = {
+		# 'root_url': 'jpark.pythonanywhere.com',
+		'root_url': '127.0.0.1:8000',
+		'admin_name': 'super',
 		'company_name': 'Spray Pros',
 		'footer_copyright': 'Spray Pros, 2014',
 		'logo_file_name': 'images/logo_big.png',

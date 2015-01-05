@@ -15,7 +15,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
           {% if user.is_authenticated %}
-          <a href="{% url 'account' %}">My Account</a>
+          <a href="{% url 'profiles_profile_detail' user.username %}">My Account</a>
           {% else %}
           <a href="{% url 'auth_login' %}">Log In or Sign Up</a>
           {% endif %}

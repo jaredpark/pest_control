@@ -1,4 +1,4 @@
 from django.contrib import admin
-from homepage.models import UserProfile
+from user_interface.models import UserProfile
 
 admin.site.register(UserProfile)

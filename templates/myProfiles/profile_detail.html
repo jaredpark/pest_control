@@ -5,6 +5,9 @@
 {% load crispy_forms_tags %}
 
 {% block page_content_block %}
+{% if not profile %}
+	<h5>Please <a href='{% url 'profiles_profile_detail' user.username %}'>click here</a> to view your account</h5>
+{% else %}
 <row style='text-align:center;'>
 	<p><a class='btn btn-sm btn-primary' href="{% url 'auth_logout' %}?next={% url 'index' %}" style='color:#fff'>Click here</a> to log out.</p>
 </row>
@@ -14,6 +17,7 @@
 </ul>
 <div id='account-tab-content' class='tab-content'>
 	<div role='tabpanel' class='tab-pane fade' id='tab1' aria-labelledby='tab1-tab'>
+		<h4>{{ profile.user.username }}'s account information</h4>
 		<div class='table-responsive'>
 			<table class='table table-hover'>
 				<thead>
@@ -25,27 +29,27 @@
 				<tbody>
 					<tr>
 						<th scorpe='row'>Next Appointment</th>
-						<td>{{ user.get_profile.next_appointment }}</td>
+						<td>{{ profile.next_appointment }}</td>
 					</tr>
 					<tr>
 						<th scorpe='row'>Current Balance</th>
-						<td>{{ user.get_profile.balance }}</td>
+						<td>{{ profile.balance }}</td>
 					</tr>
 					<tr>
 						<th scorpe='row'>Dog in Yard?</th>
-						<td>{{ user.get_profile.dog }}</td>
+						<td>{{ profile.dog }}</td>
 					</tr>
 					<tr>
 						<th scorpe='row'>Notes</th>
-						<td>{{ user.get_profile.notes }}</td>
+						<td>{{ profile.notes }}</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
 	</div>
 	<div role='tabpanel' class='tab-pane fade' id='tab2' aria-labelledby='tab2-tab'>
+		<h4>{{ profile.user.username }}'s profile</h4>
 		<div class='table-responsive'>
-			<a class='btn btn-primary' href='{% url 'profiles_edit_profile' %}'>Edit Your Profile</a>
 			<table class='table table-hover'>
 				<thead>
 					<tr>
@@ -56,28 +60,37 @@
 				<tbody>
 					<tr>
 						<th scorpe='row'>First Name</th>
-						<td>{{ user.first_name }}</td>
+						<td>{{ profile.first_name }}</td>
 					</tr>
 					<tr>
 						<th scorpe='row'>Last Name</th>
-						<td>{{ user.last_name }}</td>
+						<td>{{ profile.last_name }}</td>
+					</tr>
+					<tr>
+						<th scorpe='row'>Phone</th>
+						<td>{{ profile.phone }}</td>
 					</tr>
 					<tr>
 						<th scorpe='row'>Email</th>
-						<td>{{ user.email }}</td>
+						<td>{{ profile.email }}</td>
 					</tr>
-
 					<tr>
 						<th scorpe='row'>Address</th>
-						<td>{{ user.get_profile.address }}</td>
+						<td>{{ profile.address }}</td>
+					</tr>
+					<tr>
+						<th scorpe='row'>City</th>
+						<td>{{ profile.city }}</td>
 					</tr>
 					<tr>
 						<th scorpe='row'>Zipcode</th>
-						<td>{{ user.get_profile.zipcode }}</td>
+						<td>{{ profile.zipcode }}</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
+		<a class='btn btn-primary' href='{% url 'profiles_edit_profile' %}'>Edit Your Profile</a>
 	</div>
 </div>
+{% endif %}
 {% endblock page_content_block %}

@@ -29,8 +29,7 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-AUTH_PROFILE_MODULE = 'homepage.UserProfile'
-LOGIN_URL = '/./login/'
+AUTH_PROFILE_MODULE = 'user_interface.UserProfile'
 
 ALLOWED_HOSTS = []
 
@@ -51,6 +50,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'registration',
+    'myProfiles',
     'homepage',
     'navbar',
     'footer',
@@ -63,10 +63,13 @@ INSTALLED_APPS = (
     'crispy_forms',
 )
 
+def admin_name():
+    return 'super'
+
 REGISTRATION_OPEN = True
 ACCOUNT_ACTIVATION_DAYS = 7
 REGISTRATION_AUTO_LOGIN = True
-LOGIN_REDIRECT_URL = '/my_account/'
+LOGIN_REDIRECT_URL = '/profiles/home/'
 LOGIN_URL = '/accounts/login/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
